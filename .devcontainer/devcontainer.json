@@ -48,7 +48,7 @@
         // for git submodules: https://docs.github.com/ja/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces
         "codespaces": {
             "repositories": {
-                "SonySemiconductorSolutions/aitrios-sdk-console-access-lib-ts": {
+                "SonySemiconductorSolutions/aitrios-sdk-typescript-dev": {
                     "permissions": {
                         "contents": "read"
                     }

@@ -36,23 +36,24 @@ This repository provides sample code for a [Next.js](https://nextjs.org/) applic
 
 4. Open `localhost:3000` in a browser and verify that the application is running.
 
-> **Note**
-> To make this app fully operational, start the backend app([aitrios-sample-application-check-data-tool-python
-](https://github.com/SonySemiconductorSolutions/aitrios-sample-application-check-data-tool-python)) and specify the hosted address in the config file.
-If the environment is codespaces, the url on codespaces must be specified.  (e.g., `https\://user-name-container-name-xxxxxxxxx-5000.preview.app.github.dev`)
-> `src/config/backendConfig.ts`
->
-> ```sh
-> const baseURL = 'http://localhost:5000'    // Default address, when starting checkdata-python locally 
->
-> export default baseURL
-> ```
+    > **Note**
+    > To make this app fully operational, start the backend app([aitrios-sample-application-check-data-tool-python
+    ](https://github.com/SonySemiconductorSolutions/aitrios-sample-application-check-data-tool-python/tree/v1/main)) and specify the hosted address in the config file. If the environment is codespaces, the url on codespaces must be specified. (e.g., `https\://user-name-container-name-xxxxxxxxx-5000.preview.app.github.dev`)
+    >
+    > `src/config/backendConfig.ts`
+    >
+    > ```javascript
+    > const baseURL = 'http://localhost:5000'    // Default address, when starting checkdata-python locally 
+    >
+    > export default baseURL
+    > ```
 
 #### Use Next.js API Routes feature for API server(Alt mode)
 
-This app can operate using the Next.js backend API functionality without launching a [backend app](https://github.com/SonySemiconductorSolutions/aitrios-sample-application-check-data-tool-python) separately.
+This app can operate using the Next.js backend API functionality without launching a [backend app](https://github.com/SonySemiconductorSolutions/aitrios-sample-application-check-data-tool-python/tree/v1/main) separately.
 
 1. Create console access setting configuration file with real values under [src/config/](./src/config/console_access_settings.yaml.sample).
+
     `src/config/console_access_settings.yaml`
 
     ```yaml
@@ -70,10 +71,11 @@ This app can operate using the Next.js backend API functionality without launchi
     > - Specify registered application client ID for client_id
 
     Refer to the [Portal user manual](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/documents/portal-user-manual/) for details.
-2. Specify the same address where this application is hosted in the config file.If the environment is codespaces, the url on codespaces must be specified.  (e.g., `https://user-name-container-name-xxxxxxxxx-3000.preview.app.github.dev`)
+2. Specify the same address where this application is hosted in the config file.If the environment is codespaces, the url on codespaces must be specified. (e.g., `https://user-name-container-name-xxxxxxxxx-3000.preview.app.github.dev`)
+
     `src/config/backendConfig.ts`
 
-     ```ts
+     ```javascript
      const baseURL = 'http://localhost:3000'    // Default address, when starting this app locally
     
      export default baseURL
@@ -95,9 +97,9 @@ This app can operate using the Next.js backend API functionality without launchi
 | `TypeScript` | `^4.9.5` | Syntactic superset of JavaScript which adds static typing. |
 | `Next.js` | `13.1.6` | React-based web application development framework with server-side rendering and static website generation. |
 | `React` | `18.2.0` | Front-end JavaScript library for building user interfaces based on components. |
-| `MUI` | `^5.11.9` |  Library of UI design components that developers can easily import to build React applications. |
+| `MUI` | `^5.11.10` |  Library of UI design components that developers can easily import to build React applications. |
 | `Flatbuffers` | `1.11.0` | Cross platform serialization library for various languages. |
-| [`ConsoleAccessLibrary`](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-ts) | `1.2.0` | SDK Library that provides API requests to Console. |
+| [`ConsoleAccessLibrary`](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-ts) | `1.3.0` | SDK Library that provides API requests to Console. |
 
 ### Functional overview
 
@@ -132,9 +134,10 @@ This app can operate using the Next.js backend API functionality without launchi
     > **Note**
     > At this time, the number of images retrieved from the subdirectory is limited to the latest 5. This is a provisional measure to avoid delays in screen display due to the time consuming deserialization process described below.
     > To change the number of images acquired, modify the following section of the source code.
+    >
     > `src/features/showcase/showWindow.tsx`
     >
-    > ```ts
+    > ```javascript
     >...
     > axios
     >   .get('/api/getImagesAndInferences', {
@@ -202,12 +205,12 @@ Run the automatic formatting tool `Prettier` to perform automatic formatting of 
 
 ## Get support
 
-- [Contact us](https://developer.aitrios.sony-semicon.com/en/edge-ai-sensing/contact-us/)
+- [Contact us](https://support.aitrios.sony-semicon.com/hc/en-us/requests/new/)
 
 ## See also
 
-- [aitrios-sdk-console-access-lib-ts](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-ts)
-- [aitrios-sdk-cloud-app-sample-ts](https://github.com/SonySemiconductorSolutions/aitrios-sdk-cloud-app-sample-ts)
+- [aitrios-sdk-console-access-lib-ts](https://github.com/SonySemiconductorSolutions/aitrios-sdk-console-access-lib-ts/tree/v1/main/)
+- [aitrios-sdk-cloud-app-sample-ts](https://github.com/SonySemiconductorSolutions/aitrios-sdk-cloud-app-sample-ts/tree/v1/main/)
 
 ## Trademark
 
