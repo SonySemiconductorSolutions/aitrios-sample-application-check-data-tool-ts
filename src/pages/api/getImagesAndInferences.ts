@@ -125,12 +125,12 @@ const getImageAndInference = async (deviceId: string, outputSubDir: string, numb
     if (resInference.status !== 200) {
       throw new Error(resInference.response.data)
     }
-    if (resInference.data.length === 0 || !resInference.data[0].inferences[0].O) {
+    if (resInference.data.length === 0 || !resInference.data[0].inference_result.Inferences[0].O) {
       throw new Error('Cannot get inference results.')
     }
 
     try {
-      const decodedData = Buffer.from(resInference.data[0].inferences[0].O, 'base64')
+      const decodedData = Buffer.from(resInference.data[0].inference_result.Inferences[0].O, 'base64')
       const deserializedData = deserializeObjectDetection(decodedData)
       const inferenceData = JSON.stringify(deserializedData)
       const output = { image: base64Img, inferenceData, timestamp }
